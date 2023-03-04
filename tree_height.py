@@ -24,18 +24,19 @@ def compute_height(n, parents):
 def main(): 
     word = input()
 
-    if 'I' in word: 
-        n = int(input())
-        parents = list(map(int, input().split()))
+    #if 'I' in word: 
+    #    n = int(input())
+    #    parents = list(map(int, input().split()))
 
-    elif word[0] == "F":
-        filename = input()
-        if filename.endswith("a"):
-            return
-        else:
-            with open('/workspaces/tree-height-from-empty-OskarsLintins/test/05') as fn:
-                n = int(fn.readline())
-                parents = list(map(int, fn.readline().split()))
+    #elif word[0] == "F":
+    filename = input()
+    if filename.endswith("a"):
+        return
+    else:
+        #with open('/workspaces/tree-height-from-empty-OskarsLintins/test/05') as fn:
+        with open(filename) as fn:
+            n = int(fn.readline())
+            parents = list(map(int, fn.readline().split()))
 
     height = compute_height(n, parents)
     print (height)
