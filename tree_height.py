@@ -33,7 +33,7 @@ def main():
         if filename.endswith("a"):
             return
         else:
-            with open('/workspaces/tree-height-from-empty-OskarsLintins/test/' + filename) as fn:
+            with open('/workspaces/tree-height-from-empty-OskarsLintins/test/05') as fn:
                 n = int(fn.readline())
                 parents = list(map(int, fn.readline().split()))
 
