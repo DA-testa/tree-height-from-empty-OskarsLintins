@@ -30,18 +30,17 @@ def main():
 
     elif word == "F":
         filename = input()
-        with open(filename) as fn:
-            n = int(fn.readline())
-            parents = list(map(int, fn.readline().split()))
+        if filename.endswith("a"):
+            return
+        else:
+            with open(filename) as fn:
+                n = int(fn.readline())
+                parents = list(map(int, fn.readline().split()))
 
     height = compute_height(n, parents)
     print (height)
 
-    # /workspaces/tree-height-from-empty-OskarsLintins/test/
-
-    # let user input file name to use, don't allow file names with letter a
-    # account for github input inprecision
-    
+# /workspaces/tree-height-from-empty-OskarsLintins/test/    
 sys.setrecursionlimit(10**7)
 threading.stack_size(2**27)
 threading.Thread(target=main).start()
