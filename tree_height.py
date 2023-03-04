@@ -2,8 +2,8 @@
 
 import sys
 import threading
+import os
 import numpy
-
 
 def compute_height(n, parents):
     children = {i: [] for i in range(n)}
@@ -29,13 +29,17 @@ def main():
         parents = list(map(int, input().split()))
 
     elif word[0] == "F":
-        filename = input().strip()
-        if filename.endswith("a"):
-            return
-        else:
-            with open('/workspaces/tree-height-from-empty-OskarsLintins/test/' + filename) as fn:
-                n = int(fn.readline())
-                parents = list(map(int, fn.readline().split()))
+        test_dir = '/workspaces/tree-height-from-empty-OskarsLintins/test/'
+        filenames = os.listdir(test_dir)
+        #filename = input().strip()
+        for filename in filenames:
+            if filename.endswith("a"):
+                return
+            else:
+            #with open('/workspaces/tree-height-from-empty-OskarsLintins/test/' + filename) as fn:
+                with open(os.path.join(test_dir, filename)) as fn:
+                    n = int(fn.readline())
+                    parents = list(map(int, fn.readline().split()))
 
     height = compute_height(n, parents)
     print (height)
