@@ -28,7 +28,7 @@ def main():
         n = int(input())
         parents = list(map(int, input().split()))
 
-    elif 'F' in word:
+    elif word[0] == "F":
         filename = input()
         if filename.endswith("a"):
             return
