@@ -29,11 +29,11 @@ def main():
         parents = list(map(int, input().split()))
 
     elif word[0] == "F":
-        filename = input()
+        filename = input().strip()
         if filename.endswith("a"):
             return
         else:
-            with open(filename.strip()) as fn:
+            with open(/workspaces/tree-height-from-empty-OskarsLintins/test/ + filename) as fn:
                 n = int(fn.readline())
                 parents = list(map(int, fn.readline().split()))
 
