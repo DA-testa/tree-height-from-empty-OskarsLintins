@@ -12,11 +12,11 @@ def compute_height(n, parents):
         if parents[i] != -1:
             children[parents[i]].append(i)
 
-    def max_height(node):
-        if not children[node]:
+    def max_height(i):
+        if not children[i]:
             return 1
         else:
-            return 1 + max(max_height(child) for child in children[node])
+            return 1 + max(max_height(child) for child in children[i])
         
     root = parents.index(-1)
     return max_height(root)
