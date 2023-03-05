@@ -3,7 +3,7 @@
 import sys
 import threading
 import numpy
-
+import os
 
 def compute_height(n, parents):
     children = {i: [] for i in range(n)}
@@ -30,10 +30,11 @@ def main():
 
     elif word[0] == "F":
         filename = input().strip()
+        filepath = os.path.join(os.getcwd(), filename)
         if filename.endswith("a"):
             return
         else:
-            with open('/workspaces/tree-height-from-empty-OskarsLintins/test/' + filename) as fn:
+            with open(filepath, 'r') as fn:
                 n = int(fn.readline())
                 parents = list(map(int, fn.readline().split()))
 
