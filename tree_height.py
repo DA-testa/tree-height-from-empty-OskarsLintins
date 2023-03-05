@@ -30,7 +30,7 @@ def main():
 
     elif word[0] == "F":
         filename = input().strip()
-        filepath = os.path.join(os.getcwd(),'test/' + filename)
+        filepath = os.path.join(os.getcwd(), filename)
         if filename.endswith("a"):
             return
         else:
